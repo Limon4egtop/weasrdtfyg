@@ -1,12 +1,22 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from '../features/cartSlice';
-import { Card, CardContent, Typography, Button, List, ListItem, ListItemText } from '@mui/material';
+import {
+    Card,
+    CardContent,
+    Typography,
+    Button,
+    List,
+    ListItem,
+    ListItemText,
+    useTheme,
+} from '@mui/material';
 import { motion } from 'framer-motion';
 
 const Cart = () => {
     const dispatch = useDispatch();
     const { items, total } = useSelector((state) => state.cart);
+    const theme = useTheme();
 
     return (
         <Card
@@ -18,11 +28,10 @@ const Cart = () => {
                 margin: 2,
                 boxShadow: 3,
                 borderRadius: 2,
-                backgroundColor: 'white',
+                backgroundColor: theme.palette.background.paper,
             }}
         >
-
-        <CardContent>
+            <CardContent>
                 <Typography variant="h6">Корзина</Typography>
                 <List>
                     {items.map((item) => (
@@ -43,7 +52,12 @@ const Cart = () => {
                     ))}
                 </List>
                 <Typography variant="h6">Общая стоимость: {total}$</Typography>
-                <Button onClick={() => dispatch(clearCart())} variant="contained" color="error" sx={{ mt: 2 }}>
+                <Button
+                    onClick={() => dispatch(clearCart())}
+                    variant="contained"
+                    color="error"
+                    sx={{ mt: 2 }}
+                >
                     Очистить корзину
                 </Button>
             </CardContent>
