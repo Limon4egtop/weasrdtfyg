@@ -9,8 +9,20 @@ const Cart = () => {
     const { items, total } = useSelector((state) => state.cart);
 
     return (
-        <Card sx={{ maxWidth: '100%', margin: 2, boxShadow: 3 }}>
-            <CardContent>
+        <Card
+            sx={{
+                position: 'sticky',
+                top: 100,
+                alignSelf: 'flex-start',
+                maxWidth: '100%',
+                margin: 2,
+                boxShadow: 3,
+                borderRadius: 2,
+                backgroundColor: 'white',
+            }}
+        >
+
+        <CardContent>
                 <Typography variant="h6">Корзина</Typography>
                 <List>
                     {items.map((item) => (

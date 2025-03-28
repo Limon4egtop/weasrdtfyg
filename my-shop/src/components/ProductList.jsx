@@ -45,11 +45,13 @@ const ProductList = () => {
             <div
                 style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
-                    gap: '16px',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: '24px',
                     justifyItems: 'center',
+                    marginTop: '20px',
                 }}
             >
+
                 {sortedProducts.map((product) => (
                     <ProductCard key={product.id} product={product}/>
                 ))}
