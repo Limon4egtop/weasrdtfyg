@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <Card sx={{ maxWidth: 345, margin: 2, boxShadow: 3 }}>
+            <Card sx={{ width: 300, margin: 2, boxShadow: 3 }}>
                 <CardMedia
                     component="img"
                     height="140"

@@ -42,9 +42,16 @@ const ProductList = () => {
             <FilterPanel onFilterChange={(category) => dispatch(setCategory(category))} />
             <SortPanel onSortChange={(sort) => dispatch(setSortBy(sort))} />
             <SearchBar onSearchChange={(query) => dispatch(setSearchQuery(query))} />
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gap: '16px',
+                    justifyItems: 'center',
+                }}
+            >
                 {sortedProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                    <ProductCard key={product.id} product={product}/>
                 ))}
             </div>
         </div>
