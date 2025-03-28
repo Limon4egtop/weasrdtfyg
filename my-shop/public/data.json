@@ -5,7 +5,7 @@
       "title": "Ноутбук ASUS VivoBook 15",
       "price": 45000,
       "description": "15.6 дюймов, Intel Core i5, 8 ГБ ОЗУ, 512 ГБ SSD",
-      "image": "https://via.placeholder.com/150",
+      "image": "vite.svg",
       "category": "electronics",
       "rating": 4.7
     },
